@@ -1,0 +1,12 @@
+.montItem__wrapper {
+	margin: 5px 0px;
+	padding: 7px 0px;
+	width: 100%;
+	height: 30px;
+	transition: border-bottom 0.3s ease;
+	border-bottom: 1px solid #eaeef4;
+}
+
+.monthItem__current {
+	border-bottom: 1px solid #f0303f;
+}

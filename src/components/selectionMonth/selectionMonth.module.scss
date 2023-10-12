@@ -32,13 +32,10 @@
 	display: grid;
 	grid-template-rows: 0fr;
 	overflow: hidden;
-	transition: grid-template-rows 1s ease;
+	transition: grid-template-rows 0.5s ease;
 	> ul {
 		padding: 0;
 		margin-top: 13px;
-		li {
-			margin: 10px 0px;
-		}
 	}
 }
 
