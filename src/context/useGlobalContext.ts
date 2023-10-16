@@ -5,7 +5,7 @@ export type GlobalContent = {
 }
 
 export const MyGlobalContext = createContext<GlobalContent>({
-	month: '', // set a default value
+	month: '',
 	setMonth: () => {},
 })
 export const useGlobalContext = () => useContext(MyGlobalContext)

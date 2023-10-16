@@ -10,12 +10,11 @@ body {
 .header {
 	font-size: 24px;
 	line-height: 24px;
-	color: #2b2d35;
-	font-weight: 500;
 	margin: 20px 0px;
 }
 .wrapper {
 	position: relative;
+	z-index: 1;
 	width: 1212px;
 	height: 658px;
 	border-radius: 24px;

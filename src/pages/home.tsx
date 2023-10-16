@@ -1,9 +1,10 @@
 import { FC, useState } from 'react'
 import Options from '../components/options/Options'
-import styles from './home.module.scss'
-import Schedule from '../components/schedule/Schedule'
 import { useMonth } from '../hook/useMonth'
 import { MyGlobalContext } from '../context/useGlobalContext'
+import Table from '../components/table/Table'
+import styles from './home.module.scss'
+
 const Home: FC = () => {
 	const { monthName } = useMonth()
 	const [month, setMonth] = useState<string>(monthName)
@@ -12,7 +13,7 @@ const Home: FC = () => {
 			<header className={styles.header}>График смен</header>
 			<section className={styles.wrapper}>
 				<Options />
-				<Schedule />
+				<Table />
 			</section>
 		</MyGlobalContext.Provider>
 	)
