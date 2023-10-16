@@ -13,7 +13,7 @@ const SelectionMonth: FC = () => {
 			className={styles.selectionMonth__wrapper}
 			onClick={() => toggleMonthMenu()}
 		>
-			<div className={styles['selectionMonth__city']}>
+			<div className={styles.selectionMonth__city}>
 				<p>{month}</p>
 				<img
 					className={`${styles.selectionMonth__icon} ${

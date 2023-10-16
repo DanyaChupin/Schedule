@@ -1,0 +1,12 @@
+.cell {
+	position: relative;
+	width: 27.87px;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	border-left: 1px solid #b8c4db;
+	justify-content: center;
+	&:last-child {
+		border-right: none;
+	}
+}
