@@ -1,26 +1,34 @@
-import styles from './selectionWindow.module.scss'
-import { data } from './data'
-import SelectionWindowItem from './selectionWindowItem'
 import { FC } from 'react'
 import { useOutsideClick } from '../../hook/useOutSide'
+import SelectionWindowItem from './SelectionWindowItem'
+import { Status } from '../../types/types'
+import styles from './selectionWindow.module.scss'
 
-const SelectionWindow: FC<{
+interface ISelection {
+	data?: { title: string; status: Status }[]
 	setIsOpen: (isOpen: boolean) => void
-	changeStatusDay: (status: string) => void
-}> = ({ changeStatusDay, setIsOpen }) => {
+	changeSelection: (status: string) => void
+}
+
+const SelectionWindow: FC<ISelection> = ({
+	changeSelection,
+	setIsOpen,
+	data,
+}) => {
 	const ref = useOutsideClick(() => {
 		setIsOpen(false)
 	})
 	return (
 		<div className={styles.wrapper} ref={ref}>
-			{data.map(menuItem => (
-				<SelectionWindowItem
-					changeStatusDay={changeStatusDay}
-					title={menuItem.title}
-					status={menuItem.status}
-					key={menuItem.title}
-				/>
-			))}
+			{data &&
+				data.map(menuItem => (
+					<SelectionWindowItem
+						changeSelection={changeSelection}
+						title={menuItem.title}
+						status={menuItem.status}
+						key={menuItem.title}
+					/>
+				))}
 		</div>
 	)
 }

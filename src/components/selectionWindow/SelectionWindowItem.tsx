@@ -3,12 +3,12 @@ import styles from './selectionWindow.module.scss'
 
 const SelectionWindowItem: FC<{
 	title: string
-	changeStatusDay: (status: string) => void
+	changeSelection: (status: string) => void
 	status: string
-}> = ({ title, changeStatusDay, status }) => {
+}> = ({ title, changeSelection, status }) => {
 	return (
 		<button
-			onClick={() => changeStatusDay(status)}
+			onClick={() => changeSelection(status)}
 			className={styles.statusButton}
 		>
 			{title}

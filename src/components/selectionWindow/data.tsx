@@ -1,8 +1,8 @@
 import { Status } from '../../types/types'
 
-export const data: { title: string; status: string }[] = [
+export const data: { title: string; status: Status }[] = [
 	{
-		title: 'Рабочи день',
+		title: 'Рабочий день',
 		status: Status.Work,
 	},
 	{

@@ -4,6 +4,10 @@
 	position: relative;
 }
 .tableTop_wrapper {
+	&:first-child {
+		border-top-right-radius: 24px;
+		border-top-left-radius: 24px;
+	}
 	display: flex;
 	align-items: center;
 	height: 35px;
@@ -13,13 +17,28 @@
 	}
 }
 
-.cellTop {
-	font-size: 14px;
-	width: 300px;
+.titleCell {
+	position: relative;
 	display: flex;
-	padding-left: 11px;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 14px;
+	width: 288px;
+	display: flex;
+	padding: 0px 11px;
 	align-items: center;
 	line-height: 14px;
 	height: 35px;
-	// background-color: #b8c4db44;
+}
+.option__button {
+	cursor: pointer;
+	&:not(:last-child) {
+		margin-right: 4px;
+	}
+}
+
+.option__wrapper {
+	width: 50px;
+	display: flex;
+	align-items: center;
 }

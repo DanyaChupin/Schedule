@@ -1,35 +1,40 @@
 import { FC } from 'react'
-import TitleCell from './titleCell/TitleCell'
 import styles from './table.module.scss'
 import CellStatic from '../cell/CellStatic'
 import { useGetAllDay } from '../../hook/useGetAllDay'
+import ButtonCell from './buttonCell/ButtonCell'
+import TitleCellStatic from './titleCell/TitleCellStatic'
 
-interface ITableLine {
-	title?: string
+interface ITableLineStatic {
+	title: string
 	numDay?: string[]
 	nameDay?: string[]
-	bg?: string
+	bg: string
 }
 
-const TableLineStatic: FC<ITableLine> = ({
-	title = '',
+const TableLineStatic: FC<ITableLineStatic> = ({
+	title,
 	numDay,
 	nameDay,
-	bg = '',
+	bg,
 }) => {
 	const { allDay } = useGetAllDay()
-
 	return (
 		<div
 			style={{ backgroundColor: `${bg}` }}
 			className={styles.tableTop_wrapper}
 		>
-			<TitleCell title={title} />
+			{title == 'Добавить сотрудника' ? (
+				<ButtonCell title={title} />
+			) : (
+				<TitleCellStatic title={title} />
+			)}
 			{nameDay &&
 				nameDay
 					.slice(0, allDay.length)
 					.map((day, index) => <CellStatic title={day} key={index} />)}
-			{numDay && numDay.map(day => <CellStatic title={day} key={day} />)}
+			{numDay &&
+				numDay.map((day, index) => <CellStatic title={day} key={index} />)}
 		</div>
 	)
 }
