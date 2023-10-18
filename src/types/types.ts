@@ -4,6 +4,7 @@ export interface IMenuItem {
 }
 
 export interface IEmployee {
+	id: number
 	name: string
 	surname: string
 	dadsurname: string
@@ -15,4 +16,5 @@ export enum Status {
 	Vacation = 'о',
 	IsIll = 'б',
 	Fired = 'у',
+	Delete = 'д',
 }

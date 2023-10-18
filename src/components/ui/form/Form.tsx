@@ -1,0 +1,510 @@
+import { FC, useState } from 'react'
+import InputField from '../inputField/InputField'
+import styles from './form.module.scss'
+import { useEmployeesContext } from '../../../context/useEmployeesContext'
+import { IEmployee } from '../../../types/types'
+
+const Form: FC<{ setIsCreationMenuOpen: (arg: boolean) => void }> = ({
+	setIsCreationMenuOpen,
+}) => {
+	const { employeesState, setEmployeesState } = useEmployeesContext()
+	const [name, setName] = useState('')
+	const [surname, setSurname] = useState('')
+	const [dadsurname, setDadsurname] = useState('')
+
+	const [isNameValidate, setNameIsValidate] = useState(
+		'Поле Имя не может быть пустым!'
+	)
+	const [isSurNameValidate, setSurNameIsValidate] = useState(
+		'Поле Фамилиия не может быть пустым!'
+	)
+	const [isDadsurnameValidate, setDadsurnameIsValidate] = useState(
+		'Поле Отчество не может быть пустым!'
+	)
+
+	const createNewEmployee = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault()
+		if (
+			isNameValidate.length > 0 ||
+			isSurNameValidate.length > 0 ||
+			isDadsurnameValidate.length > 0
+		) {
+			return
+		}
+		const newEmployees: IEmployee[] = [
+			...employeesState,
+			{
+				id: Math.floor(Math.random() * 100),
+				name,
+				surname,
+				dadsurname,
+				schedule: [
+					{
+						month: 'Январь',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Февраль',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+						],
+					},
+					{
+						month: 'Март',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Апрель',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Май',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Июнь',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Июль',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Август',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Сентябрь',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Октябрь',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Ноябрь',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+						],
+					},
+					{
+						month: 'Декабрь',
+						days: [
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+							'1',
+							'1',
+							'н',
+							'н',
+							'1',
+							'1',
+							'1',
+						],
+					},
+				],
+			},
+		]
+		setEmployeesState(newEmployees)
+		setIsCreationMenuOpen(false)
+	}
+
+	return (
+		<form className={styles.form__wrapper} onSubmit={createNewEmployee}>
+			<InputField
+				title='Имя'
+				option={name}
+				setOption={setName}
+				setValidate={setNameIsValidate}
+			>
+				{isNameValidate && isNameValidate}
+			</InputField>
+
+			<InputField
+				title='Фамилия'
+				option={surname}
+				setOption={setSurname}
+				setValidate={setSurNameIsValidate}
+			>
+				{isSurNameValidate && isSurNameValidate}
+			</InputField>
+
+			<InputField
+				title='Отчество'
+				option={dadsurname}
+				setOption={setDadsurname}
+				setValidate={setDadsurnameIsValidate}
+			>
+				{isDadsurnameValidate && isDadsurnameValidate}
+			</InputField>
+
+			<button type='submit' className={styles.form__button}>
+				Добавить
+			</button>
+		</form>
+	)
+}
+
+export default Form

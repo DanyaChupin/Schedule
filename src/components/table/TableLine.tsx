@@ -7,34 +7,32 @@ import { useGlobalContext } from '../../context/useGlobalContext'
 
 interface ITableLine {
 	employee: IEmployee
-	title?: string
+	employeeName: string
 	bg?: string
 }
 
-const TableLine: FC<ITableLine> = ({ employee, title = '', bg = '' }) => {
+const TableLine: FC<ITableLine> = ({ employee, employeeName, bg }) => {
 	const { month } = useGlobalContext()
-
 	return (
 		<div
 			style={{ backgroundColor: `${bg}` }}
 			className={styles.tableTop_wrapper}
 		>
-			<TitleCell title={title} />
-			{employee &&
-				employee.schedule
-					.filter(monthes => monthes.month == month)
-					.map(month =>
-						month.days.map((nameDay, index) => {
-							return (
-								<Cell
-									employee={employee}
-									title={nameDay}
-									indexDay={index}
-									key={index + 1}
-								/>
-							)
-						})
-					)}
+			<TitleCell employeeName={employeeName} employeeId={employee.id} />
+			{employee.schedule
+				.filter(monthes => monthes.month == month)
+				.map(month =>
+					month.days.map((nameDay, index) => {
+						return (
+							<Cell
+								employee={employee}
+								title={nameDay}
+								indexDay={index}
+								key={index}
+							/>
+						)
+					})
+				)}
 		</div>
 	)
 }
