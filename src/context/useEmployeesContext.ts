@@ -1,12 +1,12 @@
 import { createContext, useContext } from 'react'
 import { IEmployee } from '../types/types'
 
-export type CreationMenuContext = {
+export type IEmployeesState = {
 	employeesState: IEmployee[]
 	setEmployeesState: (arg: IEmployee[]) => void
 }
 
-export const MyEmployeesContext = createContext<CreationMenuContext>({
+export const MyEmployeesContext = createContext<IEmployeesState>({
 	employeesState: [],
 	setEmployeesState: () => {},
 })
