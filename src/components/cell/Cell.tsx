@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from 'react'
-import styles from './cell.module.scss'
 import { IEmployee, Status } from '../../types/types'
 import { data } from '../selectionWindow/data'
 import { useGlobalContext } from '../../context/useGlobalContext'
 import SelectionWindow from '../selectionWindow/SelectionWindow'
+import styles from './cell.module.scss'
 
 interface ICell {
 	employee: IEmployee
@@ -14,7 +14,6 @@ const Cell: FC<ICell> = ({ title, employee, indexDay }) => {
 	const [statusDay, setStatusDay] = useState('')
 	const [isSelectionOpen, setIsSelectionOpen] = useState(false)
 	const { month } = useGlobalContext()
-
 	useEffect(() => {
 		setStatusDay(title)
 	}, [month, title])

@@ -13,6 +13,7 @@ interface ITableLine {
 
 const TableLine: FC<ITableLine> = ({ employee, employeeName, bg }) => {
 	const { month } = useGlobalContext()
+
 	return (
 		<div
 			style={{ backgroundColor: `${bg}` }}
