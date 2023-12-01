@@ -9,7 +9,7 @@ const ButtonCell: FC<{ title: string }> = ({ title }) => {
 				onClick={() => setIsCreationMenuOpen(true)}
 				className={styles.buttonCell__wrapper}
 			>
-				<img src='/src/assets/plus.svg' alt='Create' />
+				<img src='/plus.svg' alt='Create' />
 				{title}
 			</div>
 			{isCreationMenuOpen && (

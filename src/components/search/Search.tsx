@@ -8,7 +8,7 @@ const Search: FC = () => {
 	return (
 		<form>
 			<label className={styles.search__wrapper}>
-				<img src='/src/assets/search.svg' alt='search' />
+				<img src='/search.svg' alt='search' />
 				<input
 					className={styles.search__input}
 					type='text'
