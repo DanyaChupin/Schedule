@@ -19,7 +19,7 @@ const SelectionMonth: FC = () => {
 					className={`${styles.selectionMonth__icon} ${
 						isOpen && styles.icon__coup
 					}`}
-					src='/src/assets/triangle.svg'
+					src='/triangle.svg'
 					alt='open'
 				/>
 			</div>

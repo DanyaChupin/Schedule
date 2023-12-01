@@ -22,13 +22,13 @@ const TitleCell: FC<{
 			{employeeName && (
 				<div className={styles.option__wrapper}>
 					<span className={styles.option__button}>
-						<img src='/src/assets/change.svg' />
+						<img src='/change.svg' />
 					</span>
 					<span
 						className={styles.option__button}
 						onClick={() => setIsSelectOpen(true)}
 					>
-						<img src='/src/assets/option.svg' />
+						<img src='/option.svg' />
 					</span>
 					{isSelectOpen && (
 						<SelectionWindow
